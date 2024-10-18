@@ -1,0 +1,92 @@
+/* Modal background */
+#Container-blur {
+  position: relative;
+  transition: 600ms;
+}
+
+.active {
+  filter: blur(3.5px);
+}
+
+/* Sorting container styling */
+.sorting-continer {
+  margin: 30px auto;
+  max-width: 1250px;
+  padding: 10px;
+}
+
+/* Button wrapper styling */
+.Btn-Wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+  .Btn-Wrap {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-left: 10px;
+  }
+  
+  .sorting-continer {
+    margin: 5px;
+  }
+}
+
+/* Speed range styling */
+.st-speed-range {
+  display: flex;
+  align-items: center;
+}
+
+/* Bar wrapper styling */
+.wrapperBar {
+  display: flex;
+  align-items: flex-end;
+  height: 400px;
+  width: 100%;
+  justify-content: center;
+  border: 2px solid rgba(27, 31, 35, 0.15); /* Overall border for the wrapper */
+  border-radius: 10px; /* Rounded corners for the wrapper */
+  padding: 10px; /* Padding inside the wrapper */
+}
+
+/* Bar styling */
+.bar {
+  border: 1px solid rgb(228, 242, 250);
+  background-color: #3498db; /* Original blue color */
+  border-radius: 15px; /* Rounded corners for the bars */
+  height: 30px; /* Adjust height for better visibility */
+  width: 100%; /* Full width of the parent */
+  margin: 5px 0; /* Spacing between bars */
+}
+
+/* Text color for labels */
+label {
+  color: white; /* Set label text color to white */
+}
+
+/* Optional: Button styles for better aesthetics */
+.button-1,
+.button-4 {
+  background-color: #FAFBFC; /* Light background */
+  border: 2px solid rgba(27, 31, 35, 0.15);
+  border-radius: 4px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  color: #24292E; /* Original text color */
+  cursor: pointer;
+  padding: 10px 16px; /* Button padding */
+  transition: background-color 0.2s ease;
+}
+
+.button-1:hover,
+.button-4:hover {
+  background-color: #e1e1e1; /* Light grey on hover */
+}
+  

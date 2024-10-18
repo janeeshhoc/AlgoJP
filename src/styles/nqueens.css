@@ -1,0 +1,62 @@
+.queen_contianer{
+    height: 90vh;
+    width: 100vw;
+}
+.queen_header{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto;
+    max-width: 680px;
+}
+@media only screen and (max-width: 768px) {
+    .queen_header{
+        margin: 15px 10px;
+    } 
+}
+
+.queen_range{
+    display: flex;
+    justify-content: space-between;
+}
+.queen_btn{
+    font-size: medium;
+    margin-bottom: 10px;
+}
+.queenlabel{
+    color: rgb(169, 169, 180);
+    padding-right: 5px;
+    padding-top: 2px;
+}
+
+/* grid */
+.queen-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.queen-cell{
+    width: 70px;
+    height: 70px;
+    outline: 1px solid #c5cbce;
+}
+.queen-img{
+    background-image: url(../icons/spi.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px;
+}
+.gray-cell{
+    background-color: gray;
+}
+.green-cell{
+    background-color: rgb(189, 0, 31);
+}
+.yellow-cell{
+    background-color: rgb(14, 26, 255);
+}
+.red-cell{
+    background-color: rgb(250, 114, 114);
+}
+.blue-cell{
+    background-color: rgb(140, 16, 197);
+}

@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .form-input,
+  .form-textarea,
+  .form-multiselect,
+  .form-select,
+  .form-checkbox,
+  .form-radio {
+    @apply border bg-white text-sm text-black !important;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-multiselect,
+  .form-select,
+  .form-checkbox {
+    @apply rounded !important;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-multiselect,
+  .form-select {
+    @apply focus:border-black border-black py-2 px-3 leading-5 shadow-sm hover:border-black !important;
+  }
+
+  .form-input,
+  .form-textarea {
+    @apply placeholder-black;
+  }
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  background-color: black; /* Set background color to black */
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: black; /* Ensure the #root container also has a black background */
+}
