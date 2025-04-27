@@ -183,7 +183,7 @@ path-speed-btns{
 .shortestPath{
    width: 30px;
    height: 30px;
-   outline: 1px solid orangered;
+   outline: 1px solid red;
    animation-name: shortestPathAnimation;
    animation-duration: 500ms;
    animation-iteration-count: 1;
@@ -207,6 +207,6 @@ path-speed-btns{
    }
    100%{
       transform: scale(1);
-      background-color: orangered;
+      background-color: red;
    }
 }
