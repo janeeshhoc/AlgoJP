@@ -4,7 +4,7 @@ import "../styles/nqueens.css";
 import { Button } from "../components/Btn";
 import chessBg from "../icons/Chess.jpg";
 
-var SpeedTime = 10;
+var SpeedTime = 200;
 function N_Queen() {
   const [grid, setGrid] = useState([]);
   const [gridSize, setGridSize] = useState(4);
