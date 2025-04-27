@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import "../styles/nqueens.css";
 import { Button } from "../components/Btn";
+import chessBg from "../icons/Chess.jpg";
 
-var SpeedTime = 600;
+var SpeedTime = 10;
 function N_Queen() {
   const [grid, setGrid] = useState([]);
   const [gridSize, setGridSize] = useState(4);
-  const [speed, setSpeed] = useState(600);
 
   useEffect(() => {
     gridInit();
@@ -227,85 +227,84 @@ function N_Queen() {
     document.getElementById("gridSizeRange").disabled = false;
   };
 
-  const timeHandle = (e) => {
-    let value = parseInt(e.target.value);
-    SpeedTime = value;
-    setSpeed(value);
-  };
-
   return (
-    <>
-      <Navbar msg="N Spideys"></Navbar>
-      <div className="queen_contianer">
-        <div className="queen_header">
-          <div>
-            <div className="flex gap-3">
-              <Button onClick={startHandle} label="Start" isBgColor />
+    <div 
+      className="min-h-screen bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${chessBg})`
+      }}
+    >
+      <Navbar msg="N Queen"></Navbar>
+      <div className="w-full max-w-4xl mx-auto px-4">
+        <div className="flex flex-row items-center justify-between bg-gray-800 bg-opacity-90 rounded-lg p-4 shadow-lg mb-8">
+          <div className="flex items-center gap-4">
+            <h1 className="text-xl font-bold text-white">N-Queens Visualizer</h1>
+            <div className="flex gap-2">
+              <Button 
+                onClick={startHandle} 
+                label="Start" 
+                isBgColor 
+                className="px-4 py-2 rounded-lg hover:bg-blue-600 transition-all duration-300" 
+              />
               <Button
                 onClick={() => {
                   gridInit();
                 }}
-                label="Clear Board"
+                label="Clear"
+                className="px-4 py-2 rounded-lg hover:bg-gray-600 transition-all duration-300"
               />
             </div>
           </div>
-          <div>
-            <div className="queen_range">
-              <div className="queenlabel">Speed:</div>
-              <div>
-                <input
-                  type="range"
-                  onChange={timeHandle}
-                  value={speed}
-                  min="120"
-                  max="1200"
-                  id="speedRange"
-                ></input>
-              </div>
-            </div>
-            <div className="queen_range">
-              <div className="queenlabel">Size:</div>
-              <div>
-                <input
-                  type="range"
-                  onChange={(e) => {
-                    setGridSize(parseInt(e.target.value));
-                  }}
-                  value={gridSize}
-                  min="3"
-                  max="8"
-                  step="1"
-                  id="gridSizeRange"
-                ></input>
-              </div>
+
+          <div className="queen_range flex items-center gap-2">
+            <div className="queenlabel">Size:</div>
+            <div className="flex items-center gap-2">
+              <input
+                type="range"
+                onChange={(e) => {
+                  setGridSize(parseInt(e.target.value));
+                }}
+                value={gridSize}
+                min="3"
+                max="8"
+                step="1"
+                id="gridSizeRange"
+                className="w-24"
+              />
+              <span className="text-gray-300 text-sm">{gridSize}×{gridSize}</span>
             </div>
           </div>
         </div>
-        {grid.map((row, i) => {
-          return (
-            <div key={i} className="queen-row">
-              {row.map((v, j) => {
-                if ((i + j) % 2 === 0)
-                  return (
-                    <div
-                      id={`cell-${i}-${j}`}
-                      key={j}
-                      className="queen-cell gray-cell"
-                    ></div>
-                  );
-                return (
-                  <div
-                    id={`cell-${i}-${j}`}
-                    key={j}
-                    className="queen-cell"
-                  ></div>
-                );
-              })}
-            </div>
-          );
-        })}
+
+        <div className="flex justify-center">
+          <div className="grid-container bg-gray-800 bg-opacity-50 p-6 rounded-xl shadow-2xl">
+            {grid.map((row, i) => {
+              return (
+                <div key={i} className="queen-row">
+                  {row.map((v, j) => {
+                    if ((i + j) % 2 === 0)
+                      return (
+                        <div
+                          id={`cell-${i}-${j}`}
+                          key={j}
+                          className="queen-cell gray-cell"
+                        ></div>
+                      );
+                    return (
+                      <div
+                        id={`cell-${i}-${j}`}
+                        key={j}
+                        className="queen-cell"
+                      ></div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
